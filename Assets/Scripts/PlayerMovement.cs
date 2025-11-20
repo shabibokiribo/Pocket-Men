@@ -15,10 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); //gets the players input (horiuzontal is AD and the left and right arrows, etc.)
-    }
-
-    private void FixedUpdate()
-    {
         rb.linearVelocity = input * speed;
+      
     }
 }
