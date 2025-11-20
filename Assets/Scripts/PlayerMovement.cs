@@ -18,4 +18,15 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = input * speed;
       
     }
+
+    private void Start()
+    {
+            var data = SaveManager.Instance.currentSaveData;
+
+            transform.position = new Vector3(
+                data.playerX,
+                data.playerY,
+                data.playerZ
+            );
+    }
 }
