@@ -2,41 +2,42 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
+    [Header("Interaction Settings")]
     public float interactRange = 5f;
     public LayerMask interactableLayer;
+
     private Camera mainCam;
 
     private void Awake()
     {
         mainCam = Camera.main;
         if (mainCam == null)
-            Debug.LogError("No Main Camera found!");
+            Debug.LogError("[InteractionController] No Main Camera found in the scene!");
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // left click
         {
-            Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, interactableLayer);
+            Vector2 mouseWorldPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, Mathf.Infinity, interactableLayer);
             if (hit.collider != null)
             {
-                Debug.Log("Raycast hit: " + hit.collider.name);
-
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
                 {
-                    if (Vector2.Distance(transform.position, hit.collider.transform.position) <= interactRange)
+                    float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
+                    if (distance <= interactRange)
                     {
                         interactable.Interact();
+                        Debug.Log($"[InteractionController] Interacted with {hit.collider.name}");
                     }
-                    else Debug.Log("Too far to interact with: " + hit.collider.name);
+                    else
+                    {
+                        Debug.Log($"[InteractionController] Too far to interact with {hit.collider.name}");
+                    }
                 }
-            }
-            else
-            {
-                Debug.Log("Raycast hit nothing!");
             }
         }
     }

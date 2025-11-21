@@ -7,8 +7,8 @@ public class City : Interactable
     public int minLevel = 1;
     public int maxLevel = 5;
 
-    public string[] firstNamesOverride;
-    public string[] lastNamesOverride;
+    public string[] firstNamesOverride; // optional override for this city
+    public string[] lastNamesOverride;  // optional override for this city
 
     public override void Interact()
     {
@@ -17,9 +17,7 @@ public class City : Interactable
 
     public void Pillage()
     {
-        Debug.Log("Pillage called on city: " + cityName);
-
-        // Generate PocketMan
+        // Generate a random PocketMan using your generator
         PMInst newPM = PocketManGenerator.Instance.GenerateRandomPocketMan(
             minLevel,
             maxLevel,
@@ -29,21 +27,13 @@ public class City : Interactable
 
         if (newPM == null)
         {
-            Debug.LogWarning("PocketMan generation failed!");
+            Debug.LogWarning("Failed to generate PocketMan!");
             return;
         }
 
-        Debug.Log($"Generated PocketMan: {newPM.firstName} {newPM.lastName} (Level {newPM.level})");
-
-        // Show UI popup
-        if (UIManager.Instance != null)
-        {
-            UIManager.Instance.ShowPocketManPopup(newPM, OnPocketManDecision);
-        }
-        else
-        {
-            Debug.LogWarning("UIManager instance not found!");
-        }
+        // Show the popup
+        UIManager.Instance.ShowPocketManPopup(newPM, OnPocketManDecision);
+        Debug.Log($"Pillaged city '{cityName}' and got {newPM.firstName} {newPM.lastName}");
     }
 
     private void OnPocketManDecision(bool keep, PMInst pm)
@@ -59,6 +49,7 @@ public class City : Interactable
         }
     }
 
+    // Optional: visualize city in editor
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
