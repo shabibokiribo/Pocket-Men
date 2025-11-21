@@ -37,6 +37,13 @@ public class BattleManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        playerPM = GameManager.Instance.currentPlayerPM;
+        enemyPM = GameManager.Instance.currentEnemyTeam[0]; // first PocketMan in enemy team
+        SetupBattle();
+    }
+
     /// <summary>
     /// Call this from outside to start a battle
     /// </summary>
@@ -61,21 +68,56 @@ public class BattleManager : MonoBehaviour
         enemyHealthBar.maxValue = enemyPM.maxHealthStat;
         enemyHealthBar.value = enemyPM.health;
 
-        // Setup move buttons
+        dialogueText.text = "A wild PocketMan appeared!";
+
+        playerTurn = true;
+        SetupMoveButtons();
+    }
+
+    private void SetupMoveButtons()
+    {
+        // Clear any existing buttons
         foreach (Transform child in moveButtonsPanel.transform)
-        {
             Destroy(child.gameObject);
+
+        if (playerPM.moves == null || playerPM.moves.Length == 0)
+        {
+            Debug.LogWarning("Player has no moves!");
+            return;
         }
 
+        // Create a button for each move
         foreach (string move in playerPM.moves)
         {
+            string capturedMove = move; // capture for lambda
             Button btn = Instantiate(moveButtonPrefab, moveButtonsPanel.transform);
-            btn.GetComponentInChildren<TMP_Text>().text = move;
-            btn.onClick.AddListener(() => OnPlayerMove(move));
+            TMP_Text btnText = btn.GetComponentInChildren<TMP_Text>();
+            if (btnText != null)
+                btnText.text = capturedMove;
+
+            btn.onClick.AddListener(() =>
+            {
+                if (playerTurn)
+                {
+                    DisableMoveButtons();
+                    OnPlayerMove(capturedMove);
+                }
+            });
         }
 
-        dialogueText.text = "A wild PocketMan appeared!";
-        playerTurn = true;
+        EnableMoveButtons();
+    }
+
+    private void EnableMoveButtons()
+    {
+        foreach (Button btn in moveButtonsPanel.GetComponentsInChildren<Button>())
+            btn.interactable = true;
+    }
+
+    private void DisableMoveButtons()
+    {
+        foreach (Button btn in moveButtonsPanel.GetComponentsInChildren<Button>())
+            btn.interactable = false;
     }
 
     public void OnPlayerMove(string move)
@@ -109,6 +151,7 @@ public class BattleManager : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = "Enemy is choosing a move...";
+        DisableMoveButtons();
         yield return new WaitForSeconds(1f);
 
         string enemyMove = enemyPM.moves[Random.Range(0, enemyPM.moves.Length)];
@@ -128,6 +171,7 @@ public class BattleManager : MonoBehaviour
         {
             playerTurn = true;
             dialogueText.text = "Choose your move!";
+            EnableMoveButtons();
         }
     }
 

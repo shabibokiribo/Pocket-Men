@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class BattleConfirmationManager : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class BattleConfirmationManager : MonoBehaviour
 
         confirmationPanel.SetActive(false);
 
-        fightButton.onClick.AddListener(OnFightConfirmed);
+        // Leave button works normally
         leaveButton.onClick.AddListener(ClosePanel);
     }
 
@@ -42,19 +41,39 @@ public class BattleConfirmationManager : MonoBehaviour
         difficultyText.text = "Difficulty: " + npcTrainer.difficulty;
         statsText.text = "PocketMen: " + npcTrainer.generatedTeam.Count;
 
+        // Remove previous listeners to prevent duplicates
+        fightButton.onClick.RemoveAllListeners();
+
+        // Add lambda to call OnFightConfirmed with the current trainer
+        fightButton.onClick.AddListener(() => OnFightConfirmed(currentTrainer));
+        // Keep leave functionality
+        fightButton.onClick.AddListener(ClosePanel);
+
         confirmationPanel.SetActive(true);
     }
 
-    public void OnFightConfirmed()
+    private void OnFightConfirmed(NPCTrainer trainer)
     {
-        // Assuming you stored the current NPCTrainer being confirmed:
-        BattleManager.Instance.StartBattle(
-            GameManager.Instance.pocketMenInventory[0], // or whichever PMInst is active
-            currentTrainer.generatedTeam[0]             // first PocketMan of the trainer
-        );
+        // Assign the enemy team in GameManager
+        GameManager.Instance.currentEnemyTeam = trainer.generatedTeam;
 
-        // Close the confirmation menu
-        confirmationPanel.SetActive(false);
+        // Automatically assign player's active PocketMan if null
+        if (GameManager.Instance.currentPlayerPM == null)
+        {
+            if (GameManager.Instance.pocketMenInventory.Count > 0)
+            {
+                GameManager.Instance.currentPlayerPM = GameManager.Instance.pocketMenInventory[0];
+                Debug.Log($"{GameManager.Instance.currentPlayerPM.firstName} is now your active PocketMan.");
+            }
+            else
+            {
+                Debug.LogError("Player has no PocketMan in inventory!");
+                return;
+            }
+        }
+
+        // Load the battle scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("BattleScene");
     }
 
     private void ClosePanel()

@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,21 +10,20 @@ public class GameManager : MonoBehaviour
     public int playerRating = 0;
     public List<PMInst> pocketMenInventory = new List<PMInst>();
 
+    // CURRENT BATTLE DATA
+    [HideInInspector] public PMInst currentPlayerPM;      // Active PocketMan for battle
+    [HideInInspector] public List<PMInst> currentEnemyTeam; // Enemy team for battle
+
     private void Awake()
     {
-        // Ensure only one instance exists
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // destroy duplicate
+            Destroy(gameObject);
             return;
         }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject); // persist across scenes
+        DontDestroyOnLoad(gameObject);
     }
-
-    // --- Player Methods ---
-    //public List<PMInst> pocketMenInventory = new List<PMInst>();
 
     public void AddPocketMan(PMInst pm)
     {
@@ -36,6 +34,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetActivePocketMan(PMInst pm)
+    {
+        if (pocketMenInventory.Contains(pm))
+        {
+            currentPlayerPM = pm;
+            Debug.Log($"{pm.firstName} is now your active PocketMan.");
+        }
+        else
+        {
+            Debug.LogWarning("You do not own this PocketMan!");
+        }
+    }
 
     public void IncreaseRating(int amount)
     {
