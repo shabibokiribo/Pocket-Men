@@ -79,6 +79,8 @@ public class PocketManGenerator : MonoBehaviour
 
         // Stats
         p.health = Random.Range(type.minHealth, type.maxHealth + 1);
+        p.maxHealthStat = p.health;
+
         p.attack = Random.Range(type.minAttack, type.maxAttack + 1);
         p.defense = Random.Range(type.minDefense, type.maxDefense + 1);
 

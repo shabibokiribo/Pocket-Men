@@ -12,6 +12,9 @@ public class PocketMan : ScriptableObject
 
     public string typeName;
 
+    
+
+
     [Header("Stat Ranges")]
     public int minHealth;
     public int maxHealth;

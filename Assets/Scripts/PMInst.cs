@@ -15,6 +15,7 @@ public class PMInst
     public int health;
     public int attack;
     public int defense;
+    public int maxHealthStat; // Set when generating PM
 
     // Generated moves for this instance
     public string[] moves;

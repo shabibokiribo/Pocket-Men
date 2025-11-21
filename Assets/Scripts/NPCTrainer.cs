@@ -69,14 +69,10 @@ public class NPCTrainer : Interactable
 
     private void OnDialogueComplete()
     {
-        // Start battle with generatedTeam; if you have a BattleManager, call it here.
-        // Example (replace with your BattleManager API):
-        // BattleManager.Instance.StartBattle(generatedTeam, trainerName, difficulty);
+        if (hasBeenDefeated)
+            return;
 
-        Debug.Log($"[NPCTrainer] Starting battle vs {trainerName} (difficulty {difficulty})");
-
-        // If you don't have a battle manager yet, you can mark defeated here for quick testing:
-        // MarkDefeated();
+        BattleConfirmationManager.Instance.ShowConfirmation(this);
     }
 
     /// <summary>
