@@ -21,12 +21,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-            var data = SaveManager.Instance.currentSaveData;
+           /// var data = SaveManager.Instance.currentSaveData;
 
-            transform.position = new Vector3(
-                data.playerX,
-                data.playerY,
-                data.playerZ
-            );
+           /// transform.position = new Vector3(
+            ///    data.playerX,
+             //   data.playerY,
+             //   data.playerZ
+         //   );
     }
 }
