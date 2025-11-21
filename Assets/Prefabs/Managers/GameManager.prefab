@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6703646407875535271}
   - component: {fileID: 8731203847178424178}
+  - component: {fileID: 2162452273003721118}
+  - component: {fileID: 4304931179086673446}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,3 +46,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3438bd9b0bde9409b4689e37f69571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerLevel: 1
+  playerRating: 0
+  pocketMenInventory: []
+--- !u!114 &2162452273003721118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87575601018855255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3438bd9b0bde9409b4689e37f69571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerLevel: 1
+  playerRating: 0
+  pocketMenInventory: []
+--- !u!114 &4304931179086673446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87575601018855255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb9228d721cfd4298054bd3db3b322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  maxPocketMen: 6

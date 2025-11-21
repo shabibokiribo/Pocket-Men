@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 16d92632b0ba8774fbc5e003a5a6f00d
+guid: 5b9e6a4412490da469bdbdd8b036c59c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2921777107891239532
-    second: UI_Flat_Button02a_3_0
+      213: -5929731031972670041
+    second: pixel-art-city-background-blue-with-buildings-constructions-bridge-and-cloudy-sky-for-8bit-game-vector_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Flat_Button02a_3_0
+      name: pixel-art-city-background-blue-with-buildings-constructions-bridge-and-cloudy-sky-for-8bit-game-vector_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 1920
+        height: 885
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 495464b5333c377d0800000000000000
-      internalID: -2921777107891239532
+      spriteID: 7a598a12b0d55bda0800000000000000
+      internalID: -5929731031972670041
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Flat_Button02a_3_0: -2921777107891239532
+      pixel-art-city-background-blue-with-buildings-constructions-bridge-and-cloudy-sky-for-8bit-game-vector_0: -5929731031972670041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

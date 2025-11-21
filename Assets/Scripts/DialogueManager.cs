@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (dialoguePanel.activeSelf && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1)))
+        if (dialoguePanel.activeSelf && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
             NextLine();
         }
