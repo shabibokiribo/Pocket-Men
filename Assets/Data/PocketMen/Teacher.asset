@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -135558089773148155, guid: c4924e53694ece54da06577c5500a8ca, type: 3}
   typeName: Teacher
   minHealth: 60
   maxHealth: 80

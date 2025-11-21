@@ -10,9 +10,8 @@ public class GameManager : MonoBehaviour
     public int playerRating = 0;
     public List<PMInst> pocketMenInventory = new List<PMInst>();
 
-    // --- CURRENT BATTLE DATA ---
-    [HideInInspector] public PMInst currentPlayerPM;       // Active PocketMan for battle
-    [HideInInspector] public List<PMInst> currentEnemyTeam; // Enemy team for battle
+    [HideInInspector] public PMInst currentPlayerPM;
+    [HideInInspector] public List<PMInst> currentEnemyTeam;
 
     private void Awake()
     {
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Add a PocketMan to the player's inventory
     public void AddPocketMan(PMInst pm)
     {
         if (!pocketMenInventory.Contains(pm))
@@ -35,15 +33,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Set the active PocketMan for battle
     public void SetActivePocketMan(PMInst pm)
     {
         if (pocketMenInventory.Contains(pm))
         {
             currentPlayerPM = pm;
             Debug.Log($"{pm.firstName} is now your active PocketMan.");
-
-            // Ensure moves are assigned if not already
             EnsureMoves(currentPlayerPM);
         }
         else
@@ -52,7 +47,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Returns the current active PocketMan, generating moves if necessary
     public PMInst GetActivePlayerPM()
     {
         if (currentPlayerPM == null)
@@ -72,11 +66,22 @@ public class GameManager : MonoBehaviour
         return currentPlayerPM;
     }
 
-    // Ensure the PocketMan has 1–2 moves assigned at runtime
     public void EnsureMoves(PMInst pm)
     {
+        if (pm == null) return;
+
+        // Set maxHealthStat if missing
+        if (pm.maxHealthStat == 0) pm.maxHealthStat = pm.health;
+
         if (pm.moves != null && pm.moves.Length > 0) return;
-        if (pm.baseData == null || pm.baseData.possibleMoves == null || pm.baseData.possibleMoves.Length == 0) return;
+
+        if (pm.baseData == null || pm.baseData.possibleMoves == null || pm.baseData.possibleMoves.Length == 0)
+        {
+            // Assign fallback move
+            pm.moves = new string[] { "Struggle" };
+            Debug.LogWarning($"{pm.firstName} has no moves in baseData. Assigned fallback move.");
+            return;
+        }
 
         int moveCount = Mathf.Min(2, pm.baseData.possibleMoves.Length);
         List<string> chosenMoves = new List<string>();
@@ -96,7 +101,6 @@ public class GameManager : MonoBehaviour
         pm.moves = chosenMoves.ToArray();
     }
 
-    // Ensure all PMInst in a list have moves
     public void EnsureMovesForTeam(List<PMInst> team)
     {
         if (team == null) return;
@@ -106,14 +110,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Increase player rating
     public void IncreaseRating(int amount)
     {
         playerRating += amount;
         Debug.Log("Player Rating: " + playerRating);
     }
 
-    // Level up the player
     public void LevelUp()
     {
         playerLevel++;

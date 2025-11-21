@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 1426932907738368719, guid: 8b26ca29e9a44044094d6e7528dba579, type: 3}
   typeName: Bodybuilder
   minHealth: 60
   maxHealth: 80

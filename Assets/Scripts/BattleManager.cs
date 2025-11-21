@@ -38,66 +38,73 @@ public class BattleManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Only runs if StartBattle was not used
     private void Start()
     {
-        if (playerPM != null && enemyPM != null)
-            return;
-
-        Debug.LogWarning("BattleManager loaded without StartBattle. Attempting fallback setup.");
-
-        playerPM = GameManager.Instance.GetActivePlayerPM();
-        GameManager.Instance.EnsureMoves(playerPM);
-
-        if (GameManager.Instance.currentEnemyTeam != null &&
-            GameManager.Instance.currentEnemyTeam.Count > 0)
+        // Fallback if StartBattle was not called
+        if (playerPM == null || enemyPM == null)
         {
-            GameManager.Instance.EnsureMovesForTeam(GameManager.Instance.currentEnemyTeam);
-            enemyPM = GameManager.Instance.currentEnemyTeam[0];
+            playerPM = GameManager.Instance.GetActivePlayerPM();
+            EnsureMoves(playerPM);
 
-            SetupBattle();
+            if (GameManager.Instance.currentEnemyTeam != null && GameManager.Instance.currentEnemyTeam.Count > 0)
+            {
+                foreach (var enemy in GameManager.Instance.currentEnemyTeam)
+                    EnsureMoves(enemy);
+
+                enemyPM = GameManager.Instance.currentEnemyTeam[0];
+            }
+            else
+            {
+                Debug.LogError("No enemy team found. Cannot start battle.");
+                return;
+            }
         }
-        else
-        {
-            Debug.LogError("BattleManager has no enemy team and StartBattle was not called.");
-        }
+
+        SetupBattle();
     }
 
-    // This is the correct way to start a battle
     public void StartBattle(PMInst player, PMInst enemy)
     {
         playerPM = player;
         enemyPM = enemy;
 
-        GameManager.Instance.EnsureMoves(playerPM);
-        GameManager.Instance.EnsureMoves(enemyPM);
+        EnsureMoves(playerPM);
+        EnsureMoves(enemyPM);
 
         SetupBattle();
+    }
+
+    private void EnsureMoves(PMInst pm)
+    {
+        if (pm.moves == null || pm.moves.Length == 0)
+            GameManager.Instance.EnsureMoves(pm);
     }
 
     private void SetupBattle()
     {
         if (playerPM == null || enemyPM == null)
         {
-            Debug.LogError("SetupBattle called without valid PocketMen.");
+            Debug.LogError("Cannot setup battle. Missing PocketMen.");
             return;
         }
 
-        // Player UI setup
+        // Ensure maxHealthStat is set
+        if (playerPM.maxHealthStat == 0) playerPM.maxHealthStat = playerPM.health;
+        if (enemyPM.maxHealthStat == 0) enemyPM.maxHealthStat = enemyPM.health;
+
+        // Player UI
         playerSprite.sprite = playerPM.sprite;
-        playerNameText.text = playerPM.firstName + " Lvl " + playerPM.level;
-        playerPM.maxHealthStat = playerPM.health;
+        playerNameText.text = $"{playerPM.firstName} Lvl {playerPM.level}";
         playerHealthBar.maxValue = playerPM.maxHealthStat;
         playerHealthBar.value = playerPM.health;
 
-        // Enemy UI setup
+        // Enemy UI
         enemySprite.sprite = enemyPM.sprite;
-        enemyNameText.text = enemyPM.firstName + " Lvl " + enemyPM.level;
-        enemyPM.maxHealthStat = enemyPM.health;
+        enemyNameText.text = $"{enemyPM.firstName} Lvl {enemyPM.level}";
         enemyHealthBar.maxValue = enemyPM.maxHealthStat;
         enemyHealthBar.value = enemyPM.health;
 
-        dialogueText.text = "A battle began.";
+        dialogueText.text = "A battle began!";
         playerTurn = true;
 
         SetupMoveButtons();
@@ -105,13 +112,13 @@ public class BattleManager : MonoBehaviour
 
     private void SetupMoveButtons()
     {
-        // Clear old buttons
+        // Clear existing buttons
         foreach (Transform child in moveButtonsPanel.transform)
             Destroy(child.gameObject);
 
         if (playerPM.moves == null || playerPM.moves.Length == 0)
         {
-            Debug.LogError("Player moves missing during button setup.");
+            Debug.LogError("Player has no moves!");
             dialogueText.text = "ERROR: Player has no moves.";
             return;
         }
@@ -119,11 +126,15 @@ public class BattleManager : MonoBehaviour
         foreach (string move in playerPM.moves)
         {
             string capturedMove = move;
-            Button btn = Instantiate(moveButtonPrefab, moveButtonsPanel.transform);
 
-            TMP_Text txt = btn.GetComponentInChildren<TMP_Text>();
-            if (txt != null)
-                txt.text = capturedMove;
+            Button btn = Instantiate(moveButtonPrefab, moveButtonsPanel.transform);
+            TMP_Text btnText = btn.GetComponentInChildren<TMP_Text>();
+            if (btnText == null)
+            {
+                Debug.LogError("Move button prefab is missing TMP_Text child!");
+                continue;
+            }
+            btnText.text = capturedMove;
 
             btn.onClick.AddListener(() =>
             {
@@ -156,20 +167,20 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(PerformPlayerMove(move));
     }
 
-    IEnumerator PerformPlayerMove(string move)
+    private IEnumerator PerformPlayerMove(string move)
     {
         playerTurn = false;
 
         int damage = Mathf.Max(1, playerPM.attack - enemyPM.defense + Random.Range(-2, 3));
-        enemyPM.health -= damage;
-        enemyHealthBar.value = Mathf.Max(enemyPM.health, 0);
+        enemyPM.health = Mathf.Clamp(enemyPM.health - damage, 0, enemyPM.maxHealthStat);
+        enemyHealthBar.value = enemyPM.health;
 
-        dialogueText.text = playerPM.firstName + " used " + move + " and dealt " + damage + " damage.";
+        dialogueText.text = $"{playerPM.firstName} used {move} and dealt {damage} damage!";
         yield return new WaitForSeconds(1.2f);
 
         if (enemyPM.health <= 0)
         {
-            dialogueText.text = enemyPM.firstName + " fainted.";
+            dialogueText.text = $"{enemyPM.firstName} fainted!";
             yield return new WaitForSeconds(1.2f);
             BattleOver(true);
         }
@@ -179,24 +190,23 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    IEnumerator EnemyTurn()
+    private IEnumerator EnemyTurn()
     {
         dialogueText.text = "Enemy is choosing a move...";
         DisableMoveButtons();
         yield return new WaitForSeconds(1f);
 
         string enemyMove = enemyPM.moves[Random.Range(0, enemyPM.moves.Length)];
-
         int damage = Mathf.Max(1, enemyPM.attack - playerPM.defense + Random.Range(-2, 3));
-        playerPM.health -= damage;
-        playerHealthBar.value = Mathf.Max(playerPM.health, 0);
+        playerPM.health = Mathf.Clamp(playerPM.health - damage, 0, playerPM.maxHealthStat);
+        playerHealthBar.value = playerPM.health;
 
-        dialogueText.text = "Enemy " + enemyPM.firstName + " used " + enemyMove + " and dealt " + damage + " damage.";
+        dialogueText.text = $"Enemy {enemyPM.firstName} used {enemyMove} and dealt {damage} damage!";
         yield return new WaitForSeconds(1.2f);
 
         if (playerPM.health <= 0)
         {
-            dialogueText.text = playerPM.firstName + " fainted.";
+            dialogueText.text = $"{playerPM.firstName} fainted!";
             yield return new WaitForSeconds(1f);
             BattleOver(false);
         }
@@ -208,7 +218,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    void BattleOver(bool playerWon)
+    private void BattleOver(bool playerWon)
     {
         if (playerWon)
         {
@@ -217,9 +227,9 @@ public class BattleManager : MonoBehaviour
         else
         {
             GameManager.Instance.pocketMenInventory.Remove(playerPM);
-            Debug.Log(playerPM.firstName + " was removed from your inventory.");
+            Debug.Log($"{playerPM.firstName} was removed from your inventory.");
         }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("OverworldScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Neighborhood");
     }
 }

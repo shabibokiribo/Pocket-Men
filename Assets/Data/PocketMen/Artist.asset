@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -5667785163459470533, guid: 72efe86f83e83de479e2be876c439cbe, type: 3}
   typeName: Artist
   minHealth: 10
   maxHealth: 30

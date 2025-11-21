@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -5461496712832900230, guid: 7c556afe5350f1a4fb0fdc321af9db08, type: 3}
   typeName: Doctor
   minHealth: 90
   maxHealth: 100

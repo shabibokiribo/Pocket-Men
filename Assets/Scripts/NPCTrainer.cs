@@ -106,8 +106,8 @@ public class NPCTrainer : Interactable
         p.attack = Random.Range(template.minAttack + atkBoost, template.maxAttack + atkBoost + 1);
         p.defense = Random.Range(template.minDefense + defBoost, template.maxDefense + defBoost + 1);
 
-        // Sprite — YOU FORGOT THIS
-        p.sprite = template.sprite;
+        //  REMOVED — sprite is read-only and already taken from baseData
+        // p.sprite = template.sprite;
 
         // MOVES
         AssignMovesFromTemplate(p, template);

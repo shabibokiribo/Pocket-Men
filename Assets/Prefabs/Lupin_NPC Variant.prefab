@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3619115455146925593
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: difficulty
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: trainerName
+      value: Lupin
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: teamTemplates.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: More Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d11c1d054066bf4abc6a4ad15d32b76, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 69bb49a992e985342b67323827038dba, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 620b39abe1c23ba468d13429593dcc72, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d8405ae76158a8442ba9302e46ed6e48, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 20ba4f5ef4c13974497951bd2c7d0fdb, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ea565a24eeba064bb7be706cb18962f, type: 2}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.b
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.g
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.r
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376260868083680107, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Name
+      value: Lupin_NPC Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}

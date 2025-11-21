@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5408785485732735050
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: difficulty
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: trainerName
+      value: Umbra the Wise
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: teamTemplates.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: More Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 871a20a8434aeb644b502a23f5cea9b8, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ed0d4e611e1ea04468326a9c980983c0, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e6f661c813e2977458eb91adcbf48dae, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: dcbff8d6c496b4240b4f91fa08c05967, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0689eb6e2a172b9459b9daa3c0810c5f, type: 2}
+    - target: {fileID: 506373580815524997, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: 'teamTemplates.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 871a20a8434aeb644b502a23f5cea9b8, type: 2}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821785894173420743, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.g
+      value: 0.08802067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073709128014783720, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3946777
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376260868083680107, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
+      propertyPath: m_Name
+      value: Umbra_NPC Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 053eeec4a0738e54db7b1c8bc964f854, type: 3}
