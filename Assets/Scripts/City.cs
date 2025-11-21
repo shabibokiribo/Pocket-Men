@@ -1,61 +1,51 @@
 using UnityEngine;
 
-public class City : MonoBehaviour
+public class City : Interactable
 {
     [Header("City Settings")]
     public string cityName = "Unnamed City";
     public int minLevel = 1;
     public int maxLevel = 5;
 
-    public string[] firstNamesOverride; // optional override for this city
-    public string[] lastNamesOverride;  // optional override for this city
+    public string[] firstNamesOverride;
+    public string[] lastNamesOverride;
 
-    // Called when the player clicks this city
+    public override void Interact()
+    {
+        Pillage();
+    }
+
     public void Pillage()
     {
-        // Generate a random PocketMan
-        PMInst newPM = GenerateRandomPocketManForCity();
+        Debug.Log("Pillage called on city: " + cityName);
 
-        // Show the popup
-        UIManager.Instance.ShowPocketManPopup(newPM, OnPocketManDecision);
-    }
+        // Generate PocketMan
+        PMInst newPM = PocketManGenerator.Instance.GenerateRandomPocketMan(
+            minLevel,
+            maxLevel,
+            firstNamesOverride,
+            lastNamesOverride
+        );
 
-    private PMInst GenerateRandomPocketManForCity()
-    {
-        // Pick a random type from PocketManGenerator
-        PocketMan type = PocketManGenerator.Instance.pocketManTypes[Random.Range(0, PocketManGenerator.Instance.pocketManTypes.Length)];
-
-        PMInst pm = new PMInst();
-        pm.baseData = type;
-        
-
-        // Choose name using overrides if available, otherwise generator defaults
-        string[] firsts = (firstNamesOverride != null && firstNamesOverride.Length > 0) ? firstNamesOverride : PocketManGenerator.Instance.firstNames;
-        string[] lasts = (lastNamesOverride != null && lastNamesOverride.Length > 0) ? lastNamesOverride : PocketManGenerator.Instance.lastNames;
-
-        pm.firstName = firsts[Random.Range(0, firsts.Length)];
-        pm.lastName = lasts[Random.Range(0, lasts.Length)];
-
-        // Level within city range
-        pm.level = Random.Range(minLevel, maxLevel + 1);
-
-        // Stats based on type + random within min/max
-        pm.health = Random.Range(type.minHealth, type.maxHealth + 1);
-        pm.attack = Random.Range(type.minAttack, type.maxAttack + 1);
-        pm.defense = Random.Range(type.minDefense, type.maxDefense + 1);
-
-        // Random moves (1–2 moves)
-        int moveCount = Mathf.Min(2, type.possibleMoves.Length);
-        pm.moves = new string[moveCount];
-        for (int i = 0; i < moveCount; i++)
+        if (newPM == null)
         {
-            pm.moves[i] = type.possibleMoves[Random.Range(0, type.possibleMoves.Length)];
+            Debug.LogWarning("PocketMan generation failed!");
+            return;
         }
 
-        return pm;
+        Debug.Log($"Generated PocketMan: {newPM.firstName} {newPM.lastName} (Level {newPM.level})");
+
+        // Show UI popup
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.ShowPocketManPopup(newPM, OnPocketManDecision);
+        }
+        else
+        {
+            Debug.LogWarning("UIManager instance not found!");
+        }
     }
 
-    // Callback when the player decides to keep or discard
     private void OnPocketManDecision(bool keep, PMInst pm)
     {
         if (keep)
@@ -69,7 +59,6 @@ public class City : MonoBehaviour
         }
     }
 
-    // Optional: visualize city in editor
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
