@@ -18,11 +18,15 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Drunk
+  minHealth: 10
+  maxHealth: 100
+  minAttack: 10
+  maxAttack: 100
+  minDefense: 10
+  maxDefense: 100
+  possibleMoves:
+  - ???
+  - '!!!'
+  - '###'
+  - ?1#@

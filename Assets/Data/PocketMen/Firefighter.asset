@@ -14,8 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PocketMan
   manName: 
   level: 0
-  maxHealth: 0
   attack: 0
   defense: 0
   health: 0
   sprite: {fileID: 0}
+  typeName: Firefighter
+  minHealth: 90
+  maxHealth: 100
+  minAttack: 70
+  maxAttack: 90
+  minDefense: 70
+  maxDefense: 90
+  possibleMoves:
+  - Hose Down
+  - Siren Attack

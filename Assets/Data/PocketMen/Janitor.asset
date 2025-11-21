@@ -18,11 +18,13 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Janitor
+  minHealth: 50
+  maxHealth: 60
+  minAttack: 80
+  maxAttack: 95
+  minDefense: 70
+  maxDefense: 100
+  possibleMoves:
+  - Mop the Floor with
+  - Wipe Down

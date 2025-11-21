@@ -18,11 +18,16 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Dancer
+  minHealth: 50
+  maxHealth: 70
+  minAttack: 20
+  maxAttack: 50
+  minDefense: 80
+  maxDefense: 100
+  possibleMoves:
+  - Twirl
+  - High Kick
+  - Jazz Hands
+  - Shimmy
+  - Rhythm Earthquake

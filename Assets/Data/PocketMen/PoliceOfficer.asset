@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PocketMan
   manName: 
   level: 0
-  maxHealth: 0
   attack: 0
   defense: 0
   health: 0
   sprite: {fileID: 0}
+  typeName: Police Officer
+  minHealth: 30
+  maxHealth: 45
+  minAttack: 70
+  maxAttack: 85
+  minDefense: 10
+  maxDefense: 25
+  possibleMoves:
+  - Overreact
+  - Driving Ticket
+  - Paid Leave

@@ -14,8 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PocketMan
   manName: 
   level: 0
-  maxHealth: 0
   attack: 0
   defense: 0
   health: 0
   sprite: {fileID: 0}
+  typeName: Priest
+  minHealth: 90
+  maxHealth: 95
+  minAttack: 0
+  maxAttack: 100
+  minDefense: 10
+  maxDefense: 100
+  possibleMoves:
+  - Pray
+  - Call Upon God

@@ -18,11 +18,14 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Discord Mod
+  minHealth: 10
+  maxHealth: 20
+  minAttack: 20
+  maxAttack: 30
+  minDefense: 10
+  maxDefense: 15
+  possibleMoves:
+  - Call Kitten
+  - Stink Attack
+  - Ban Hammer

@@ -18,11 +18,14 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Farmer
+  minHealth: 80
+  maxHealth: 95
+  minAttack: 30
+  maxAttack: 55
+  minDefense: 80
+  maxDefense: 100
+  possibleMoves:
+  - Radish Roundhouse
+  - Shuck
+  - Flood the Fields

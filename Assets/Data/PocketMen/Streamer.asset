@@ -18,11 +18,14 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Streamer
+  minHealth: 10
+  maxHealth: 15
+  minAttack: 10
+  maxAttack: 15
+  minDefense: 5
+  maxDefense: 10
+  possibleMoves:
+  - Call Chat
+  - Bit Bash
+  - Cancel

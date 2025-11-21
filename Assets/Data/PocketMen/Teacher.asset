@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PocketMan
   manName: 
   level: 0
-  maxHealth: 0
   attack: 0
   defense: 0
   health: 0
   sprite: {fileID: 0}
+  typeName: Teacher
+  minHealth: 60
+  maxHealth: 80
+  minAttack: 30
+  maxAttack: 75
+  minDefense: 10
+  maxDefense: 35
+  possibleMoves:
+  - Lecture
+  - Send to Office
+  - Write Up

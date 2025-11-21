@@ -18,11 +18,15 @@ MonoBehaviour:
   defense: 0
   health: 0
   sprite: {fileID: 0}
-  typeName: 
-  minHealth: 0
-  maxHealth: 0
-  minAttack: 0
-  maxAttack: 0
-  minDefense: 0
-  maxDefense: 0
-  possibleMoves: []
+  typeName: Bodybuilder
+  minHealth: 60
+  maxHealth: 80
+  minAttack: 60
+  maxAttack: 100
+  minDefense: 70
+  maxDefense: 100
+  possibleMoves:
+  - Dumbell Bash
+  - Protein Pummel
+  - Crush
+  - Roid Rage

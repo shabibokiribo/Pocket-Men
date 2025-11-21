@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PocketMan
   manName: 
   level: 0
-  maxHealth: 0
   attack: 0
   defense: 0
   health: 0
   sprite: {fileID: 0}
+  typeName: Artist
+  minHealth: 10
+  maxHealth: 30
+  minAttack: 30
+  maxAttack: 35
+  minDefense: 10
+  maxDefense: 15
+  possibleMoves:
+  - Paintbrush Bash
+  - Color Slash
+  - Pencil Stab
+  - Palette Slam
+  - Paint Pummel
