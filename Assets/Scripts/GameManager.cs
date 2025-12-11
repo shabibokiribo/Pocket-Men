@@ -26,11 +26,14 @@ public class GameManager : MonoBehaviour
 
     public void AddPocketMan(PMInst pm)
     {
-        if (!pocketMenInventory.Contains(pm))
+        if (pocketMenInventory.Count >= 6)
         {
-            pocketMenInventory.Add(pm);
-            Debug.Log($"{pm.firstName} {pm.lastName} added to inventory!");
+            Debug.Log("Inventory full! Cannot add more PocketMen.");
+            return;
         }
+
+        pocketMenInventory.Add(pm);
+        Debug.Log($"{pm.firstName} added to inventory!");
     }
 
     public void SetActivePocketMan(PMInst pm)

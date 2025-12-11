@@ -27,6 +27,9 @@ public class UIManager : MonoBehaviour
     private Action<bool, PMInst> onPocketManDecision;
     private PMInst currentPM;
 
+    [Header("Inventory Popup UI")]
+    public GameObject inventoryPopUp;
+
     private void Awake()
     {
         // Setting up Singleton
@@ -108,6 +111,16 @@ public class UIManager : MonoBehaviour
     }
 
     #endregion
+
+    public void OnClickInv()
+    {
+        inventoryPopUp.SetActive(true );
+    }
+
+    public void OnClickInvExit()
+    {
+        inventoryPopUp.SetActive(false );
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

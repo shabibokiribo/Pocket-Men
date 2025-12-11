@@ -1,42 +1,58 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryUIManager : MonoBehaviour
 {
-    public static InventoryManager Instance;
+    public InventorySlotUI[] slots; // Assign all 6 in inspector
+    public TMP_Text activePMText;
 
-    // The player's actual Pocket Men
-    public List<PocketManInstance> pocketMen = new List<PocketManInstance>();
-
-    public int maxPocketMen = 6;
-
-    void Awake()
+    void Start()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        RefreshUI();
     }
 
-    public bool AddPocketMan(PocketManInstance p)
+    public void RefreshUI()
     {
-        if (pocketMen.Count >= maxPocketMen)
+        var inv = GameManager.Instance.pocketMenInventory;
+
+        for (int i = 0; i < slots.Length; i++)
         {
-            Debug.Log("Inventory full! Need to discard one first.");
-            return false;
+            if (i < inv.Count)
+            {
+                slots[i].SetData(inv[i]);
+            }
+            else
+            {
+                slots[i].ClearSlot();
+            }
         }
 
-        pocketMen.Add(p);
-        Debug.Log("Added PocketMan: " + p.firstName + " " + p.lastName);
-        return true;
+        UpdateActivePMText();
     }
 
-    public void RemovePocketMan(int index)
+    public void UpdateActivePMText()
     {
-        if (index >= 0 && index < pocketMen.Count)
-            pocketMen.RemoveAt(index);
+        if (GameManager.Instance.currentPlayerPM != null)
+            activePMText.text = "Active PM: " + GameManager.Instance.currentPlayerPM.firstName;
+        else
+            activePMText.text = "Active PM: None";
+    }
+
+    public void SelectPM(PMInst pm)
+    {
+        GameManager.Instance.SetActivePocketMan(pm);
+        UpdateActivePMText();
+    }
+
+    public void DeletePM(PMInst pm)
+    {
+        GameManager.Instance.pocketMenInventory.Remove(pm);
+
+        if (GameManager.Instance.currentPlayerPM == pm)
+            GameManager.Instance.currentPlayerPM = null; // Removed active one
+
+        RefreshUI();
     }
 }
 
