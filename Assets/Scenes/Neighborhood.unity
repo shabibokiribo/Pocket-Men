@@ -2595,7 +2595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &617115911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35868,7 +35868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1128680282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37857,6 +37857,135 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 524.5761, y: 194.09276, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1624942806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624942808}
+  - component: {fileID: 1624942807}
+  m_Layer: 0
+  m_Name: peaceful-and-relaxing-harp-background-music-139549
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1624942807
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624942806}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c829702a3c8ff984c80714e5aaa5b684, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1624942808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624942806}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.64587, y: 125.91177, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145598,6 +145727,23 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6606800164464754298, guid: 760a0ce19fc51bd4ebe778306e87ae97, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606800164464754298, guid: 760a0ce19fc51bd4ebe778306e87ae97, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: I run this town and the only time people come to me is when they need
+        something.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606800164464754298, guid: 760a0ce19fc51bd4ebe778306e87ae97, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: Hmph, I bet you want something form me... huh.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606800164464754298, guid: 760a0ce19fc51bd4ebe778306e87ae97, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Oh a pocket men battle? It's been a while but sure!
+      objectReference: {fileID: 0}
     - target: {fileID: 8511543272621833751, guid: 760a0ce19fc51bd4ebe778306e87ae97, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -145786,15 +145932,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6982495090233881245, guid: 52e685583dae8e74bb85370e37fa9b13, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6982495090233881245, guid: 52e685583dae8e74bb85370e37fa9b13, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
-      value: Dialogue
+      value: Whats uuup dude?
       objectReference: {fileID: 0}
     - target: {fileID: 6982495090233881245, guid: 52e685583dae8e74bb85370e37fa9b13, type: 3}
       propertyPath: 'dialogueLines.Array.data[1]'
-      value: More Dialogue
+      value: Oh, you got some pocket men! Sick!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982495090233881245, guid: 52e685583dae8e74bb85370e37fa9b13, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Well don't tease me are we gonna fight or what?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -146030,6 +146180,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3836695531611912860, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836695531611912860, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: LEAVE ME BE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836695531611912860, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: A... a what?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836695531611912860, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: A pocket men battle??
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836695531611912860, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: Okay... I guess...
+      objectReference: {fileID: 0}
     - target: {fileID: 5046242381453237618, guid: f372255b32bdada4a8cb68cfedf24864, type: 3}
       propertyPath: m_Name
       value: Lupin_NPC
@@ -146260,6 +146430,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7950677492794322364, guid: 56be728648d00ab4b986f930f2459d23, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950677492794322364, guid: 56be728648d00ab4b986f930f2459d23, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Oh hello child, I sense something new on you...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950677492794322364, guid: 56be728648d00ab4b986f930f2459d23, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: A presense of sorts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950677492794322364, guid: 56be728648d00ab4b986f930f2459d23, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Don't tell me you've gotten your first pocket man!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950677492794322364, guid: 56be728648d00ab4b986f930f2459d23, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: Well let's put them to use!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -146273,6 +146463,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1270485106}
     m_Modifications:
+    - target: {fileID: 679736876766665448, guid: 7b4f340cd4e876945b394c5c63d1af6f, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 679736876766665448, guid: 7b4f340cd4e876945b394c5c63d1af6f, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Oh, hey pipsqueak it's you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 679736876766665448, guid: 7b4f340cd4e876945b394c5c63d1af6f, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: 'I''m not in the mood to chat it''s been a long day. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 679736876766665448, guid: 7b4f340cd4e876945b394c5c63d1af6f, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Either shop or battle me with your new pocket men!
+      objectReference: {fileID: 0}
     - target: {fileID: 2648656625358707333, guid: 7b4f340cd4e876945b394c5c63d1af6f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -146418,6 +146624,27 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5076818922394217339, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076818922394217339, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: H-how in the world did you find this place.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076818922394217339, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: the one day I get a vacation someone has to bother me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076818922394217339, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Oh, you came here to fight?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076818922394217339, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: Okay, battle me and maybe you'll be able to beat the witch down the
+        road.
+      objectReference: {fileID: 0}
     - target: {fileID: 7375634699018117945, guid: f883e6793c331a8489282537b2f6b3f5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.12885535
@@ -146531,6 +146758,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6864609113491810493, guid: 0ac88152b2da83f439778390b65cc008, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864609113491810493, guid: 0ac88152b2da83f439778390b65cc008, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Hhhhhhh...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864609113491810493, guid: 0ac88152b2da83f439778390b65cc008, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: Hhhr... Hrhhh?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864609113491810493, guid: 0ac88152b2da83f439778390b65cc008, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: HHHERHH!!!
+      objectReference: {fileID: 0}
     - target: {fileID: 8281274887109224656, guid: 0ac88152b2da83f439778390b65cc008, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -146632,6 +146875,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5478872663663676623, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478872663663676623, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Heh, so you've made it all the way to the edge of town
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478872663663676623, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: to see little ole me...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478872663663676623, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: You've probably heard but I'm the best there is...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478872663663676623, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: So you better be ready for a hard fight.
+      objectReference: {fileID: 0}
     - target: {fileID: 7036838772378504354, guid: ddc71ab1b28f8404697eaffa0bd95a7d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -146725,3 +146988,4 @@ SceneRoots:
   - {fileID: 1928758274668414146}
   - {fileID: 5254779551440012965}
   - {fileID: 1609594919}
+  - {fileID: 1624942808}
