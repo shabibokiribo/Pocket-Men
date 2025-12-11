@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -827016883341640748, guid: 244dae932b7f50a42b4ccd477589970b, type: 3}
+  sprite: {fileID: -4749681873034518491, guid: 5f316699cb287df4d8cdc9f33a8c6c6a, type: 3}
   typeName: Priest
   minHealth: 90
   maxHealth: 95

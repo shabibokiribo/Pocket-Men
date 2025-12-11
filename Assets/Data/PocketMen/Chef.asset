@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 5307958571244974569, guid: a2689a6bd473476419806e6a61ac6253, type: 3}
+  sprite: {fileID: -6707068268653951271, guid: 1dba6e63c51993d498656770a45df7da, type: 3}
   typeName: Chef
   minHealth: 50
   maxHealth: 65

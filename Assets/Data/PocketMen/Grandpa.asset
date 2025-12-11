@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -708783025850468930, guid: 2e79f05012f39f84aa878b3d801a9c86, type: 3}
+  sprite: {fileID: 3091530518629734418, guid: 71b58648e9fadb54d9cbeac19c74c9a6, type: 3}
   typeName: Grandpa
   minHealth: 10
   maxHealth: 100

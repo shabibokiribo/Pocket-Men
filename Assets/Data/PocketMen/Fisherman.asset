@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -4431272134881128097, guid: 2512218c75361e1488056580e2a0bc6e, type: 3}
+  sprite: {fileID: 7638019610821655944, guid: 3e546b298c79a8a4584aa6e6c94a772b, type: 3}
   typeName: Fisherman
   minHealth: 40
   maxHealth: 75

@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -4277522475935006762, guid: ec5e774ae57209d4fa06f0064b8ea9c8, type: 3}
+  sprite: {fileID: 1916910699213044910, guid: 141c5569d17231a48887648c2edf3f89, type: 3}
   typeName: Marine
   minHealth: 90
   maxHealth: 95

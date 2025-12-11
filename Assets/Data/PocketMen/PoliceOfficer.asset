@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 1254972078360548749, guid: 0f6f043cb9ae01d4c9c6cad1efcc2f2a, type: 3}
+  sprite: {fileID: -3749740228694047907, guid: 1f0986b8926c7574c9ef50ebb1d8aaa8, type: 3}
   typeName: Police Officer
   minHealth: 30
   maxHealth: 45

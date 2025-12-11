@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -9221505809417190377, guid: 5f2d0d5b90c4d67409d4af493f5081b4, type: 3}
+  sprite: {fileID: 5824439559406568382, guid: cf3a7a3837cd4d54b96c921b2001c0b5, type: 3}
   typeName: Musician
   minHealth: 30
   maxHealth: 65

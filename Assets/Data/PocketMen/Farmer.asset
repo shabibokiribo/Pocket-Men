@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -284627385986098231, guid: adc09638e6596c740b30c1830bf8e972, type: 3}
+  sprite: {fileID: -312738567421119420, guid: 11d13372dcdd53243a33a156e0fcbea4, type: 3}
   typeName: Farmer
   minHealth: 80
   maxHealth: 95

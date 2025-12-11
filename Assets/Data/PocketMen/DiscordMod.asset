@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -2472932706149955003, guid: 61d8874d2c39d114bbd48ba067c46f14, type: 3}
+  sprite: {fileID: -1658927225162452868, guid: 362e60c6771854540ac7ebe08d4d688f, type: 3}
   typeName: Discord Mod
   minHealth: 10
   maxHealth: 20

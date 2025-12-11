@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 8957749149645487612, guid: e655acd320e895b4b837e14e1d82e1ef, type: 3}
+  sprite: {fileID: -7509031366865340264, guid: e4b2a9fad6bbba4439bae1852698b6e8, type: 3}
   typeName: Game Dev
   minHealth: 10
   maxHealth: 40

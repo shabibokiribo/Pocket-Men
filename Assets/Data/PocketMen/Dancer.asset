@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -2024208950481390408, guid: c2f27ea80c4524b488ff0df92bc74bd7, type: 3}
+  sprite: {fileID: 3510212729379067470, guid: b3eb5664a38a2db48b0ada5fc68d9c5f, type: 3}
   typeName: Dancer
   minHealth: 50
   maxHealth: 70

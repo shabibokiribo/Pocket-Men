@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 6490941376737991059, guid: bc6380e69f8ed1e499d5af72d9adf26f, type: 3}
+  sprite: {fileID: -8318146425968003523, guid: eeb215c13d1968843a9b5293f6dfdfd2, type: 3}
   typeName: Frat Boy
   minHealth: 67
   maxHealth: 69

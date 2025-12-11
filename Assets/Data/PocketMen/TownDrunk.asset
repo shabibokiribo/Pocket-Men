@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: 1933435996403738103, guid: 51fea9f753a5a3448b3cf6ed7596aa6d, type: 3}
+  sprite: {fileID: -1288479230768560328, guid: a46adb0cba94c8d4a93076563b1a4e75, type: 3}
   typeName: Drunk
   minHealth: 10
   maxHealth: 100

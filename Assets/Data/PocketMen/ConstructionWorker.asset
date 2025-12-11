@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   health: 0
-  sprite: {fileID: -2957230348993709125, guid: 21fd2de587de219448f48aeb0c67ecea, type: 3}
+  sprite: {fileID: -5862773989258749522, guid: 180f82e3c72340243a855f79aeac22d9, type: 3}
   typeName: Construction Worker
   minHealth: 70
   maxHealth: 100
