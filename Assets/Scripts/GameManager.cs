@@ -32,8 +32,11 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        pocketMenInventory.Add(pm);
-        Debug.Log($"{pm.firstName} added to inventory!");
+        if (!pocketMenInventory.Contains(pm))
+        {
+            pocketMenInventory.Add(pm);
+            Debug.Log($"{pm.firstName} {pm.lastName} added to inventory!");
+        }
     }
 
     public void SetActivePocketMan(PMInst pm)
@@ -124,4 +127,39 @@ public class GameManager : MonoBehaviour
         playerLevel++;
         Debug.Log("Player leveled up to: " + playerLevel);
     }
+
+    public PMInst CreateInstance(PocketMan baseData)
+    {
+        PMInst pm = new PMInst();
+        pm.baseData = baseData;
+
+        pm.firstName = baseData.manName;
+        pm.lastName = ""; // Optional
+
+        // Roll stats from ranges
+        pm.health = Random.Range(baseData.minHealth, baseData.maxHealth + 1);
+        pm.attack = Random.Range(baseData.minAttack, baseData.maxAttack + 1);
+        pm.defense = Random.Range(baseData.minDefense, baseData.maxDefense + 1);
+
+        pm.maxHealthStat = pm.health;
+
+        // Assign moves
+        if (baseData.possibleMoves != null && baseData.possibleMoves.Length > 0)
+        {
+            int moveCount = Mathf.Min(2, baseData.possibleMoves.Length);
+            pm.moves = new string[moveCount];
+
+            for (int i = 0; i < moveCount; i++)
+            {
+                pm.moves[i] = baseData.possibleMoves[Random.Range(0, baseData.possibleMoves.Length)];
+            }
+        }
+        else
+        {
+            pm.moves = new string[0];
+        }
+
+        return pm;
+    }
+
 }

@@ -30,9 +30,9 @@ public class PMObj : MonoBehaviour
         public TMP_Text statsText;
         public Image spriteImage;
 
-        private PocketManInstance currentInstance;
+        private PMInst currentInstance;
 
-        public void Init(PocketManInstance instance)
+        public void Init(PMInst instance)
         {
             currentInstance = instance;
 
@@ -55,7 +55,7 @@ public class PMObj : MonoBehaviour
         // Called when user presses "Keep"
         public void OnKeepButton()
         {
-            InventoryManager.Instance.AddPocketMan(currentInstance);
+            GameManager.Instance.AddPocketMan(currentInstance);
             Destroy(gameObject); // close UI
         }
 
